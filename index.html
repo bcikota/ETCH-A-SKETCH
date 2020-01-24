@@ -60,15 +60,6 @@
         }
 
         let fields = wrapper.childNodes;
-
-        function is_touch_device() {  
-          try {  
-            document.createEvent("TouchEvent");  
-            return true;  
-          } catch (e) {
-            return false;  
-          }  
-        }
         
 
         function addBlackColor(){
@@ -158,16 +149,9 @@
           createItems();
 
           fields.forEach((fields) => {
-            if(is_touch_device() === true) {
-              fields.addEventListener('touchmove', function(){
-                fields.style.backgroundColor = 'black';
-              })
-            } else {
-              fields.addEventListener('mouseover', function(){
-                fields.style.backgroundColor = 'black';
-              })
-            }
-            
+            fields.addEventListener('mouseover', function(){
+              fields.style.backgroundColor = 'black';
+            })
           })
           
         }
