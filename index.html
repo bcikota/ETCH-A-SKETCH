@@ -6,6 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>ETCH-A-SKETCH</title>
   <style>
+    body {      
+      padding: 0;
+      margin: 0;
+    }
+
     .items{
       border: 1px solid black;
 
@@ -14,11 +19,15 @@
     .container {
      display: grid;
      justify-content: center;
+     padding: 0;
+      margin: 0;
     }
 
     .containerGrid {
-      width: 30rem;
-      height: 30rem;
+      width: 100vw;
+      height: 100vh;
+      padding: 0;
+      margin: 0;
       /* display: grid;
       grid-template-columns: repeat(16, 1.875rem); */
     }
@@ -30,6 +39,7 @@
     
 
   </style>
+
 </head>
 <body>
   <div class="container">
@@ -48,7 +58,7 @@
     let newStyles = document.createElement('style');
     document.head.append(newStyles);
     newStyles.innerHTML = ".containerGrid {" +
-      "grid-template-columns: repeat("+num+","+30/num+"rem);"+
+      "grid-template-columns: repeat("+num+",1fr);"+
       "grid-gap: 1px"+
     "}";
     // "@media only screen and (max-width: 600px) {" +
