@@ -28,9 +28,12 @@
 
     .backgroundBlack{
       background-color: black;
-    }
+    }    
 
-    
+    .message{
+      display: none;
+      text-align: center;
+    }
 
   </style>
 </head>
@@ -39,6 +42,7 @@
     <div class="containerGrid"></div>
   </div>
   <script>
+    let container = document.querySelector('.container');
     let num = 16;
     let containerGrid = document.querySelector('.containerGrid');
     for(let i = 0; i < num*num; i++) {
@@ -53,19 +57,28 @@
     newStyles.innerHTML = ".containerGrid {" +
       "grid-template-columns: repeat("+num+","+30/num+"rem);"+
       "grid-gap: 1px"+
+    "}"+
+    "@media only screen and (max-width: 600px) {" +
+      ".message{"+
+        "display: block;"+
+      "}"+
+      ".items{"+
+        "display: none;"+
+      "}"+
     "}";
-    // "@media only screen and (max-width: 600px) {" +
-    //   "body {"+
-    //     "background-color: lightblue;"+
-    //   "}"+
-    // "}";
 
     let elements = document.querySelectorAll('.items');
     elements.forEach(item => {
-      item.addEventListener('touchstart',function(){
+      item.addEventListener('mouseover',function(){
         item.classList.add('backgroundBlack');
       });
     });
+
+    let message = document.createElement('p');
+    message.textContent = 'Please open in desktop browser.'
+    container.insertBefore(message, container.firstChild);
+    message.classList.add('message');
+
 
     
   </script>
