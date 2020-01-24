@@ -6,12 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>ETCH-A-SKETCH</title>
   <style>
-    body {
-      touch-action: none;
-    }
     .items{
       border: 1px solid black;
-
     }
 
     .container {
@@ -22,8 +18,6 @@
     .containerGrid {
       width: 30rem;
       height: 30rem;
-      /* display: grid;
-      grid-template-columns: repeat(16, 1.875rem); */
     }
 
     .backgroundBlack{
@@ -62,8 +56,8 @@
       ".message{"+
         "display: block;"+
       "}"+
-      ".items{"+
-        "display: none;"+
+      ".containerGrid{"+
+        "display: none !important;"+
       "}"+
     "}";
 
@@ -78,8 +72,6 @@
     message.textContent = 'Please open in desktop browser.'
     container.insertBefore(message, container.firstChild);
     message.classList.add('message');
-
-
     
   </script>
 </body>
